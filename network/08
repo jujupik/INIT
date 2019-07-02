@@ -1,0 +1,3 @@
+whois slash16.org | grep 'Name Server'
+NS-1236.AWSDNS-26.org etc...
+donc l'hebergeur de slash16 est AWS: amazon web services

@@ -1,0 +1,17 @@
+utovt@
+console-setup
+cron
+getty@
+irqbalance
+keyboard-setup
+networking
+rsync
+rsyslog
+ssh
+sshd
+syslog
+systemd-timesyncd
+vboxadd
+vboxadd
+
+type: daemon

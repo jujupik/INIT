@@ -1,0 +1,36 @@
+#!/bin/sh
+
+number=$[ $RANDOM % 10]
+nbgiven=0
+nbtry=0
+
+echo "Bonjour, "
+sleep 1
+echo "euh..."
+sleep 1
+echo "tu eux me rappeler ton prenom??"
+read name
+echo "Trouve le nombre compris entre 1 et 10"
+while [ $nbgiven -ne $number ] 
+do
+	echo "Propose un nombre :"
+	read nbgiven
+	if [ $nbgiven -gt $number ]
+	then
+		echo "Non, c'est moins!"
+	elif [ $nbgiven -lt $number ]
+	then
+		echo "Non, c'est plus!"
+	else
+		break
+	fi
+	nbtry=$((nbtry + 1))
+done
+if [ $nbgiven -eq $number ]
+then
+	nbtry=$((nbtry + 1))
+	echo "Oui c'est bien ca! Bravo et en $nbtry coups!!"
+fi
+sleep 1
+echo "Merci, passe une bonne journee $name !!!"
+

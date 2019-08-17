@@ -8,9 +8,10 @@ echo "Bonjour, "
 sleep 1
 echo "euh..."
 sleep 1
-echo "tu eux me rappeler ton prenom??"
+echo "tu peux me rappeler ton prenom??"
 read name
-echo "Ah oui $name c'est ca!" 
+echo "Ah oui $name c'est ca!"
+sleep 2
 clear
 echo "Attention c'est parti"
 sleep 1
@@ -36,7 +37,7 @@ then
 	nbtry=$((nbtry + 1))
 	echo "Oui c'est bien ca! Bravo et en $nbtry coups!!"
 fi
-sleep 2
+sleep 3
 clear
 echo "Merci, passe une bonne journee $name !!!"
 

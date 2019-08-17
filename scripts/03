@@ -10,6 +10,11 @@ echo "euh..."
 sleep 1
 echo "tu eux me rappeler ton prenom??"
 read name
+echo "Ah oui $name c'est ca!" 
+clear
+echo "Attention c'est parti"
+sleep 1
+clear
 echo "Trouve le nombre compris entre 1 et 10"
 while [ $nbgiven -ne $number ] 
 do
@@ -31,6 +36,7 @@ then
 	nbtry=$((nbtry + 1))
 	echo "Oui c'est bien ca! Bravo et en $nbtry coups!!"
 fi
-sleep 1
+sleep 2
+clear
 echo "Merci, passe une bonne journee $name !!!"
 

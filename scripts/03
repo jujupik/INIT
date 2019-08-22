@@ -1,9 +1,10 @@
 #!/bin/sh
 
-number=$[ $RANDOM % 10]
-nbgiven=0
+number=$[ $RANDOM % 20]
+nbgiven=-1
 nbtry=0
 
+clear
 echo "Bonjour, "
 sleep 1
 echo "euh..."
@@ -14,30 +15,43 @@ echo "Ah oui $name c'est ca!"
 sleep 2
 clear
 echo "Attention c'est parti"
-sleep 1
+sleep 2
 clear
-echo "Trouve le nombre compris entre 1 et 10"
+echo "\033[32;1;5;7m??? LE NOMBRE MYSTERE ???\033[0m"
+echo "\033[36mTrouve le nombre compris entre 0 et 20\033[0m"
 while [ $nbgiven -ne $number ] 
 do
-	echo "Propose un nombre :"
+	echo "\033[36mPropose un nombre :\033[0m"
 	read nbgiven
-	if [ $nbgiven -gt $number ]
+	if [[ $nbgiven =~ ^[0-9]+$ ]]
 	then
-		echo "Non, c'est moins!"
-	elif [ $nbgiven -lt $number ]
-	then
-		echo "Non, c'est plus!"
+		if [ $nbgiven -gt $number ]
+		then
+			echo "\033[34mNon, c'est moins!\033[0m"
+			echo "  "
+			echo "\033[34m    ###  \033[0m"
+			echo "  "
+		elif [ $nbgiven -lt $number ]
+		then
+			echo "\033[31mNon, c'est plus!\033[0m"
+			echo "\033[31m     #   \033[0m"
+			echo "\033[31m    ###  \033[0m"
+			echo "\033[31m     #    \033[0m"
+		else
+			break
+		fi
 	else
-		break
+		echo "\033[36mUN NOMBRE ENTRE 0 et 20...\033[0m"
+		nbgiven=-1
 	fi
 	nbtry=$((nbtry + 1))
 done
 if [ $nbgiven -eq $number ]
 then
 	nbtry=$((nbtry + 1))
-	echo "Oui c'est bien ca! Bravo et en $nbtry coups!!"
+	clear
+	echo "\033[35mOui \033[34mc'est \033[36mca! \033[32mBravo \033[33met \033[31men \033[35m$nbtry \033[34mcoups!!\033[0m"
 fi
 sleep 3
-clear
-echo "Merci, passe une bonne journee $name !!!"
+echo "\033[35mMerci, \033[34mpasse \033[36mune \033[32mbonne \033[31mjournee \033[35m$name \033[36m!!!\033[0m"
 
